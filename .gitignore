@@ -1,2 +1,91 @@
+# =========================
+# Python core
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual environments
+# =========================
 venv/
-.venv
+.venv/
+env/
+ENV/
+
+# =========================
+# Environment variables / secrets
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Jupyter / notebooks
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# AI / ML artifacts
+# =========================
+*.bin
+*.pt
+*.pth
+*.onnx
+*.joblib
+*.pickle
+*.pkl
+*.sqlite
+*.db
+
+# Vector stores / embeddings
+vectorstore/
+faiss_index/
+index.faiss
+index.pkl
+metadata.pkl
+
+# =========================
+# Logs & runtime
+# =========================
+*.log
+logs/
+tmp/
+temp/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Editors / IDEs
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# Build / distribution
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Tests / coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Power BI / data artifacts (por si mezclás proyectos)
+# =========================
+*.pbix
+*.csv
+*.xlsx
+*.xls
+
