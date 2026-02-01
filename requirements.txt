@@ -1,0 +1,21 @@
+# --- Core ---
+python-dotenv
+requests
+
+# --- GUI ---
+ttkbootstrap
+Pillow
+
+# --- RAG / Embeddings ---
+faiss-cpu
+sentence-transformers
+
+# --- PDF processing ---
+pypdf
+
+# --- Ollama client ---
+ollama
+
+# --- Utils ---
+numpy
+

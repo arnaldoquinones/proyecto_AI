@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proyecto-ai"
+version = "0.1.0"
+description = "Local PDF chat using RAG, FAISS and a local LLM"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Arnaldo Quinones" }
+]
+
+dependencies = [
+    # Core utilities
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.5.0",
+
+    # PDF processing
+    "pypdf>=4.0.0",
+    "pdfplumber>=0.10.0",
+
+    # Embeddings & NLP
+    "sentence-transformers>=2.3.0",
+    "numpy>=1.24.0",
+    "scikit-learn>=1.3.0",
+
+    # Vector store (RAG)
+    "faiss-cpu>=1.7.4",
+
+    # LLM / API communication
+    "requests>=2.31.0",
+
+    # Optional GUI
+    "ttkbootstrap>=1.10.1",
+
+    # Dev UX
+    "tqdm>=4.66.0",
+    "rich>=13.7.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "ruff>=0.2.0",
+    "black>=24.0.0"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+select = ["E", "F", "I"]

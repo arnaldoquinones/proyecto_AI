@@ -89,3 +89,7 @@ htmlcov/
 *.xlsx
 *.xls
 
+# =========================
+# archivos de guia del proyecto
+# =========================
+structure.txt
