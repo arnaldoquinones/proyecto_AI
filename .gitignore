@@ -93,3 +93,9 @@ htmlcov/
 # archivos de guia del proyecto
 # =========================
 structure.txt
+
+# =========================
+# directorios
+# =========================
+
+directorio_clonado/
