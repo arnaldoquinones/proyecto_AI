@@ -6,12 +6,16 @@ requests
 ttkbootstrap
 Pillow
 
-# --- RAG / Embeddings ---
+# --- RAG / Embeddings / VectorStore ---
 faiss-cpu
 sentence-transformers
+langchain
+langchain-community
+chromadb
 
-# --- PDF processing ---
+# --- PDF & Document processing ---
 pypdf
+markitdown
 
 # --- Ollama client ---
 ollama

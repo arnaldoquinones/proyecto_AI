@@ -2,9 +2,9 @@
 
 import os
 from markitdown import MarkItDown
-from langchain.text_splitter import MarkdownHeaderTextSplitter
-from langchain.embeddings import OpenAIEmbeddings  # o el que uses
-from langchain.vectorstores import Chroma
+from langchain_text_splitters import MarkdownHeaderTextSplitter
+from langchain_community.vectorstores import FAISS
+from langchain_ollama import OllamaEmbeddings
 
 class ProcesadorPDFaRAG:
     def __init__(self, ruta_pdf):
@@ -49,9 +49,20 @@ class ProcesadorPDFaRAG:
         
         return textos_para_embedding, metadatos
 
-# 🎯 USO:
+# 🎯 USO FINAL:
 procesador = ProcesadorPDFaRAG("mi_documento.pdf")
 textos, metadatos = procesador.procesar_completo()
+
+# Configuramos Nomic en Ollama
+embeddings = OllamaEmbeddings(model="nomic-embed-text")
+
+# Creamos la biblioteca con FAISS
+print("📦 Creando biblioteca FAISS...")
+vectorstore = FAISS.from_texts(textos, embeddings, metadatos=metadatos)
+
+# Guardamos la biblioteca para no tener que procesarla de nuevo
+vectorstore.save_local("biblioteca_bi_faiss")
+print("✅ Biblioteca guardada en carpeta 'biblioteca_bi_faiss'")
 
 # Ahora texts listo para embedding con Chroma, FAISS, etc.
 # Los metadatos contienen la info de los headers (título, sección, etc.)
